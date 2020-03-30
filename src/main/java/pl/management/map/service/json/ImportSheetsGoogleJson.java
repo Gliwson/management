@@ -15,8 +15,8 @@ import java.util.List;
 public class ImportSheetsGoogleJson {
 
     private DataRepo dataRepo;
-    @Value("${url.json}")
-    public static String URL_JSON = "${JAVA_HOME}";
+    @Value("urlJson")
+    public String URL_JSON;
 
     public ImportSheetsGoogleJson(DataRepo dataRepo) {
         this.dataRepo = dataRepo;

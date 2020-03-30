@@ -14,10 +14,10 @@ public class ConfigProperties {
     private String databaseLogin;
     @Value("${databasePassword}")
     private String databasePassword;
-    @Value("${urlDisk}")
-    private String urlDisk;
-    @Value("${urlLocation}")
-    private String urlLocation;
+    @Value("${urlCSV}")
+    private String urlCSV;
+    @Value("${urlJson}")
+    private String urlJson;
 
     public ConfigProperties(Environment environment) {
         this.environment = environment;
