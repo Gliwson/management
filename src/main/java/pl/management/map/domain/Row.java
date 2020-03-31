@@ -3,7 +3,7 @@ package pl.management.map.domain;
 import lombok.Data;
 
 @Data
-public class TableJson {
+public class Row {
     private Integer id;
     private Integer position;
     private String name;

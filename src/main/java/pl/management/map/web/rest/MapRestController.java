@@ -30,7 +30,7 @@ public class MapRestController {
     public String reloadData() {
         dataRepo.clear();
         try {
-            importWithSheetsGoogle.get();
+            importWithSheetsGoogle.getRow();
         } catch (IOException | BlankSheetException e) {
             e.printStackTrace();
             return "ERROR";

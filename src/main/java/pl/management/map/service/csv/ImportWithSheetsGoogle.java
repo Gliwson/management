@@ -39,13 +39,15 @@ public class ImportWithSheetsGoogle {
         this.dataRepo = dataRepo;
     }
 
-    public void get() throws IOException, BlankSheetException {
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getMessageConverters()
-                .add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
+    public void getRow() throws IOException, BlankSheetException {
 
-        String forObject = restTemplate.getForObject(URL_CSV_SHEETS, String.class);
-        StringReader stringReader = new StringReader(forObject);
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.getMessageConverters().add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
+        String resultSheets = restTemplate.getForObject(URL_CSV_SHEETS, String.class);
+        if (resultSheets == null) {
+            throw new BlankSheetException("Result Sheets is null");
+        }
+        StringReader stringReader = new StringReader(resultSheets);
         CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(stringReader);
 
         if (parser.iterator().next().get("location_href").isEmpty()) {
@@ -64,7 +66,6 @@ public class ImportWithSheetsGoogle {
             if (coordinates(sURL)) continue;
             dataRepo.addPoint(new Point(lat, lon, id, name, comments, locationHref, colorsName, colorsComments, dyskHref));
         }
-        System.out.println("END");
     }
 
 
@@ -81,7 +82,6 @@ public class ImportWithSheetsGoogle {
                 String[] splitUrlOnCoordinates = nameUrl.split(".*@|,\\d+[a-z].*.data.*");
                 String coordinates = cleanArray(splitUrlOnCoordinates)[0];
                 saveCoordinates(coordinates);
-
             } else {
                 coordinatesWithGetHtml(nameUrl);
             }
@@ -113,10 +113,13 @@ public class ImportWithSheetsGoogle {
         } catch (HttpClientErrorException e) {
             return;
         }
+        if (htmlString == null) {
+            throw new IllegalArgumentException("Content download failed");
+        }
         String replace = htmlString.replace("[" + '\\' + '"', "\n");
-        String replaceEnd = replace.replace("\\" + '"' + "]", " ");
-        String replaceEnd2 = replaceEnd.replace(" \\" + "n", "\n");
-        Matcher m = SEARCH_COORDINATES_IN_URL_2.matcher(replaceEnd2);
+        String replace_2 = replace.replace("\\" + '"' + "]", " ");
+        String replaceEnd = replace_2.replace(" \\" + "n", "\n");
+        Matcher m = SEARCH_COORDINATES_IN_URL_2.matcher(replaceEnd);
         try {
             String[] split = new String[0];
 
