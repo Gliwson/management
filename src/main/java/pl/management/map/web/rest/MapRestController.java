@@ -15,6 +15,7 @@ import java.util.List;
 @Log4j2
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MapRestController {
 
     private DataRepoCSV dataRepo;
