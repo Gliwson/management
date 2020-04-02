@@ -3,14 +3,14 @@ package pl.management.map.web.rest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.management.map.repository.DataRepo;
+import pl.management.map.service.csv.DataRepoCSV;
 
-@Controller()
+@Controller
 public class MapController {
 
-    private DataRepo dataRepo;
+    private DataRepoCSV dataRepo;
 
-    public MapController(DataRepo dataRepo) {
+    public MapController(DataRepoCSV dataRepo) {
         this.dataRepo = dataRepo;
     }
 
@@ -23,7 +23,6 @@ public class MapController {
         model.addAttribute("off", dataRepo.getOff());
         model.addAttribute("other", dataRepo.getOther());
         model.addAttribute("getall", dataRepo.getPointList());
-
         return "index";
     }
 

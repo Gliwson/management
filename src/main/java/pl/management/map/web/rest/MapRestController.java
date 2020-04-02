@@ -1,45 +1,44 @@
 package pl.management.map.web.rest;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.management.map.config.ConfigProperties;
-import pl.management.map.exceptions.BlankSheetException;
-import pl.management.map.repository.DataRepo;
+import pl.management.map.service.csv.DataRepoCSV;
 import pl.management.map.service.csv.ImportWithSheetsGoogle;
+import pl.management.map.service.dto.PointDTO;
+import pl.management.map.service.json.ImportSheetsGoogleJson;
 
-import java.io.IOException;
+import java.util.List;
 
 
 @Log4j2
-@RestController()
+@RestController
+@RequestMapping("/api")
 public class MapRestController {
 
-    private DataRepo dataRepo;
+    private DataRepoCSV dataRepo;
     private ImportWithSheetsGoogle importWithSheetsGoogle;
-    private ConfigProperties config;
+    private ImportSheetsGoogleJson importSheetsGoogleJson;
 
-    public MapRestController(DataRepo dataRepo, ImportWithSheetsGoogle importWithSheetsGoogle, ConfigProperties config) {
+    public MapRestController(DataRepoCSV dataRepo, ImportWithSheetsGoogle importWithSheetsGoogle, ImportSheetsGoogleJson importSheetsGoogleJson) {
         this.dataRepo = dataRepo;
         this.importWithSheetsGoogle = importWithSheetsGoogle;
-        this.config = config;
+        this.importSheetsGoogleJson = importSheetsGoogleJson;
     }
 
 
     @GetMapping("/reload")
     public String reloadData() {
         dataRepo.clear();
-        try {
-            importWithSheetsGoogle.getRow();
-        } catch (IOException | BlankSheetException e) {
-            e.printStackTrace();
-            return "ERROR";
-        }
+        importSheetsGoogleJson.getJson2();
         return "DONE";
     }
 
-    @GetMapping("/testowanie")
-    public String reloadData2() {
-        return config.getEnviroment2();
+    @CrossOrigin(origins = "http://localhost:4200/")
+    @GetMapping("/test")
+    public List<PointDTO> reloadData2() {
+        return dataRepo.getPointList();
     }
 }

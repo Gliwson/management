@@ -98,7 +98,7 @@
                     <deployables>
                         <deployable>
                             <properties>
-                                <context>ROOT</context>
+                                <context>maptest</context>
                             </properties>
                         </deployable>
                     </deployables>

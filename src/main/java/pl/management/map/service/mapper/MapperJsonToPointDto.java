@@ -1,72 +1,57 @@
-package pl.management.map.service.csv;
+package pl.management.map.service.mapper;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
-import pl.management.map.exceptions.BlankSheetException;
+import pl.management.map.service.csv.DataRepoCSV;
 import pl.management.map.service.dto.PointDTO;
+import pl.management.map.service.dto.RowDTO;
 
-import java.io.IOException;
-import java.io.StringReader;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 @Service
-public class ImportWithSheetsGoogle {
+public class MapperJsonToPointDto {
+    private DataRepoCSV dataRepoCSV;
 
     public static final Pattern SEARCH_COORDINATES_IN_URL_2 = Pattern.compile("(\\d{2}+[.]+\\d{7}+[,]+\\d{2}+[.]+\\d{7})");
     public static final Pattern SEARCH_COORDINATES_IN_URL = Pattern.compile("\\d{2}+[.]+\\d{5,}+[,]+\\d{2}+[.]+\\d{5,}");
-
-    @Value("urlCSV")
-    private static String URL_CSV_SHEETS;
-    private DataRepoCSV dataRepo;
-
+    private List<PointDTO> pointDTOS = new ArrayList<>();
     private double lat = 0;
     private double lon = 0;
 
-    public ImportWithSheetsGoogle(DataRepoCSV dataRepo) {
-        this.dataRepo = dataRepo;
+    public MapperJsonToPointDto(DataRepoCSV dataRepoCSV) {
+        this.dataRepoCSV = dataRepoCSV;
     }
 
-    public void getRow() throws IOException, BlankSheetException {
-
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getMessageConverters().add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
-        String resultSheets = restTemplate.getForObject(URL_CSV_SHEETS, String.class);
-        if (resultSheets == null) {
-            throw new BlankSheetException("Result Sheets is null");
+    public List<PointDTO> map(List<RowDTO> json) {
+        if (json == null) {
+            throw new IllegalStateException("json is null");
         }
-        StringReader stringReader = new StringReader(resultSheets);
-        CSVParser parser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(stringReader);
 
-        if (parser.iterator().next().get("location_href").isEmpty()) {
-            throw new BlankSheetException("Location Href in google Sheet is empty!");
+        for (RowDTO e : json) {
+            if (coordinates(e.getUrlLocation())) continue;
+            PointDTO pointDTO = PointDTO.builder()
+                    .id(e.getId().toString())
+                    .name(e.getName())
+                    .colorsComments(e.getCommentsColor())
+                    .colorsName(e.getNameColor())
+                    .locationHref(e.getUrlLocation())
+                    .dyskHref(e.getUrlDysk())
+                    .x(lat)
+                    .y(lon)
+                    .build();
+            pointDTOS.add(pointDTO);
+            dataRepoCSV.addPoint(new PointDTO(lat, lon, e.getId().toString(), e.getName(),
+                    e.getComments(), e.getUrlLocation(), e.getNameColor(), e.getCommentsColor(), e.getUrlDysk()));
         }
-        for (CSVRecord strings : parser) {
-            String sURL = strings.get("location_href");
-            String colorsName = strings.get("colors_name");
-            String colorsComments = strings.get("colors_comments");
-            String locationHref = strings.get("location_href");
-            String comments = strings.get("comments");
-            String name = strings.get("name");
-            String dyskHref = strings.get("dysk_href");
-            String id = strings.get("id");
-
-            if (coordinates(sURL)) continue;
-            dataRepo.addPoint(new PointDTO(lat, lon, id, name, comments, locationHref, colorsName, colorsComments, dyskHref));
-        }
+        return pointDTOS;
     }
-
 
     private boolean coordinates(String sURL) {
         if (sURL.equals("")) {
@@ -133,4 +118,3 @@ public class ImportWithSheetsGoogle {
         }
     }
 }
-

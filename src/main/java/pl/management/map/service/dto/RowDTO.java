@@ -1,9 +1,9 @@
-package pl.management.map.domain;
+package pl.management.map.service.dto;
 
 import lombok.Data;
 
 @Data
-public class Row {
+public class RowDTO {
     private Integer id;
     private Integer position;
     private String name;

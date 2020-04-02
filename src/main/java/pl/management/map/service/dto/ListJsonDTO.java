@@ -1,15 +1,14 @@
 package pl.management.map.service.dto;
 
 import lombok.Data;
-import pl.management.map.domain.Row;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Data
-public class ListJson {
+public class ListJsonDTO {
 
-    private List<Row> user = new ArrayList<>();
+    private List<RowDTO> user = new ArrayList<>();
 
 }

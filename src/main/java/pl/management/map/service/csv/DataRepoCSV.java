@@ -1,31 +1,31 @@
-package pl.management.map.repository;
+package pl.management.map.service.csv;
 
 import org.springframework.stereotype.Repository;
-import pl.management.map.service.dto.Point;
+import pl.management.map.service.dto.PointDTO;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
-public class DataRepo {
+public class DataRepoCSV {
 
-    private List<Point> pointList;
-    private List<Point> invoiced;
-    private List<Point> done;
-    private List<Point> comments;
-    private List<Point> off;
-    private List<Point> other;
+    private List<PointDTO> pointList;
+    private List<PointDTO> invoiced;
+    private List<PointDTO> done;
+    private List<PointDTO> comments;
+    private List<PointDTO> off;
+    private List<PointDTO> other;
 
-    public DataRepo() {
+    public DataRepoCSV() {
         this.pointList = new ArrayList<>();
     }
 
-    public List<Point> getPointList() {
+    public List<PointDTO> getPointList() {
         return pointList;
     }
 
-    public void addPoint(Point newPoint) {
+    public void addPoint(PointDTO newPoint) {
         this.pointList.add(newPoint);
         invoiced = getPointList().stream().filter(point -> point.getColorsName()
                 .equals("#000000")).collect(Collectors.toList());
@@ -47,32 +47,32 @@ public class DataRepo {
                 .collect(Collectors.toList());
     }
 
-    public List<Point> getInvoiced() {
+    public List<PointDTO> getInvoiced() {
         return invoiced;
     }
 
-    public List<Point> getDone() {
+    public List<PointDTO> getDone() {
         return done;
     }
 
-    public List<Point> getComments() {
+    public List<PointDTO> getComments() {
         return comments;
     }
 
-    public List<Point> getOff() {
+    public List<PointDTO> getOff() {
         return off;
     }
 
-    public List<Point> getOther() {
+    public List<PointDTO> getOther() {
         return other;
     }
 
     public void clear() {
-        pointList.clear();
-        invoiced.clear();
-        done.clear();
-        comments.clear();
-        off.clear();
-        other.clear();
+        pointList = new ArrayList<>();
+        invoiced = new ArrayList<>();
+        done = new ArrayList<>();
+        comments = new ArrayList<>();
+        off = new ArrayList<>();
+        other = new ArrayList<>();
     }
 }
