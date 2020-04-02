@@ -34,7 +34,7 @@ public class MapRestController {
         return "DONE";
     }
 
-    @CrossOrigin(origins = "https://gliwson.pl/")
+
     @GetMapping("/test")
     public List<PointDTO> reloadData2() {
         return dataRepo.getPointList();
