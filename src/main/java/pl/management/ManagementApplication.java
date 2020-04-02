@@ -25,7 +25,7 @@ public class ManagementApplication extends SpringBootServletInitializer {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/test").allowedOrigins("https://gliwson.pl/");
+                registry.addMapping("/api/test").allowedOrigins("http://localhost:4200");
             }
         };
     }

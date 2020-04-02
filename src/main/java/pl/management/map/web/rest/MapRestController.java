@@ -15,7 +15,6 @@ import java.util.List;
 @Log4j2
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("https://gliwson.pl/")
 public class MapRestController {
 
     private DataRepoCSV dataRepo;
@@ -34,6 +33,7 @@ public class MapRestController {
         return "DONE";
     }
 
+    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/test")
     public List<PointDTO> reloadData2() {
         return dataRepo.getPointList();
