@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Log4j2
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)
 public class MapRestController {
 
     private DataRepoCSV dataRepo;
