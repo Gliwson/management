@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.management.map.service.csv.DataRepoCSV;
-import pl.management.map.service.csv.ImportWithSheetsGoogle;
 import pl.management.map.service.dto.PointDTO;
 import pl.management.map.service.json.ImportSheetsGoogleJson;
 
@@ -19,12 +18,10 @@ import java.util.List;
 public class MapRestController {
 
     private DataRepoCSV dataRepo;
-    private ImportWithSheetsGoogle importWithSheetsGoogle;
     private ImportSheetsGoogleJson importSheetsGoogleJson;
 
-    public MapRestController(DataRepoCSV dataRepo, ImportWithSheetsGoogle importWithSheetsGoogle, ImportSheetsGoogleJson importSheetsGoogleJson) {
+    public MapRestController(DataRepoCSV dataRepo, ImportSheetsGoogleJson importSheetsGoogleJson) {
         this.dataRepo = dataRepo;
-        this.importWithSheetsGoogle = importWithSheetsGoogle;
         this.importSheetsGoogleJson = importSheetsGoogleJson;
     }
 
