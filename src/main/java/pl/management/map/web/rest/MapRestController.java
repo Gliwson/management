@@ -10,7 +10,6 @@ import pl.management.map.service.dto.PointDTO;
 import pl.management.map.service.json.ImportSheetsGoogleJson;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @Log4j2
@@ -38,6 +37,6 @@ public class MapRestController {
 
     @GetMapping("/test")
     public List<PointDTO> reloadData2() {
-        return dataRepo.getPointList().stream().limit(20).collect(Collectors.toList());
+        return dataRepo.getPointList();
     }
 }
