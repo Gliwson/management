@@ -2,11 +2,11 @@ package pl.management.map.service.json;
 
 
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.management.map.config.ConfigProperties;
-import pl.management.map.service.csv.DataRepoCSV;
 import pl.management.map.service.dto.ListJsonDTO;
 import pl.management.map.service.dto.PointDTO;
 import pl.management.map.service.dto.RowDTO;
@@ -18,15 +18,10 @@ import java.util.List;
 public class ImportSheetsGoogleJson {
 
     private ConfigProperties configProperties;
-    private DataRepoCSV dataRepo;
     private MapperJsonToPointDto mapperJsonToPointDto;
 
-    @Value("${urlJson}")
-    private static String URL_JSON;
-
-    public ImportSheetsGoogleJson(ConfigProperties configProperties, DataRepoCSV dataRepo, MapperJsonToPointDto mapperJsonToPointDto) {
+    public ImportSheetsGoogleJson(ConfigProperties configProperties, MapperJsonToPointDto mapperJsonToPointDto) {
         this.configProperties = configProperties;
-        this.dataRepo = dataRepo;
         this.mapperJsonToPointDto = mapperJsonToPointDto;
     }
 
@@ -38,6 +33,7 @@ public class ImportSheetsGoogleJson {
         return user.getUser();
     }
 
+    @EventListener(ApplicationReadyEvent.class)
     public List<PointDTO> getJson2() {
         List<RowDTO> json = getJson();
         return mapperJsonToPointDto.map(json);

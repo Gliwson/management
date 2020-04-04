@@ -1,7 +1,6 @@
 package pl.management.map.web.rest;
 
 import lombok.extern.log4j.Log4j2;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,13 +8,10 @@ import pl.management.map.service.csv.DataRepoCSV;
 import pl.management.map.service.dto.PointDTO;
 import pl.management.map.service.json.ImportSheetsGoogleJson;
 
-import java.util.List;
-
 
 @Log4j2
 @RestController
-@RequestMapping("/api")
-@CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)
+@RequestMapping
 public class MapRestController {
 
     private DataRepoCSV dataRepo;
@@ -34,9 +30,9 @@ public class MapRestController {
         return "DONE";
     }
 
-
     @GetMapping("/test")
-    public List<PointDTO> reloadData2() {
-        return dataRepo.getPointList();
+    public PointDTO reloadData2() {
+        log.info("getAllProducts");
+        return dataRepo.getPointList().get(1);
     }
 }
