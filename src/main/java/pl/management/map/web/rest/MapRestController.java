@@ -8,6 +8,8 @@ import pl.management.map.service.csv.DataRepoCSV;
 import pl.management.map.service.dto.PointDTO;
 import pl.management.map.service.json.ImportSheetsGoogleJson;
 
+import java.util.List;
+
 
 @Log4j2
 @RestController
@@ -31,8 +33,8 @@ public class MapRestController {
     }
 
     @GetMapping("/test")
-    public PointDTO reloadData2() {
+    public List<PointDTO> reloadData2() {
         log.info("getAllProducts");
-        return dataRepo.getPointList().get(1);
+        return dataRepo.getPointList();
     }
 }
