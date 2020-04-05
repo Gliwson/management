@@ -30,6 +30,10 @@ public class MapperJsonToPointDto {
     }
 
     public List<PointDTO> map(List<RowDTO> json) {
+        if (!dataRepoCSV.getPointList().isEmpty()) {
+            dataRepoCSV.clear();
+        }
+
         if (json == null) {
             throw new IllegalStateException("json is null");
         }
