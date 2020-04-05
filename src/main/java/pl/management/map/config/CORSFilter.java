@@ -1,5 +1,8 @@
-package pl.management;
+package pl.management.map.config;
 
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -9,7 +12,18 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Configuration
 public class CORSFilter extends GenericFilterBean implements javax.servlet.Filter {
+
+    @Bean
+    public FilterRegistrationBean<CORSFilter> corsFilterRegistration() {
+        FilterRegistrationBean<CORSFilter> registrationBean =
+                new FilterRegistrationBean<>(new CORSFilter());
+        registrationBean.setName("CORS Filter");
+        registrationBean.addUrlPatterns("/*");
+        registrationBean.setOrder(1);
+        return registrationBean;
+    }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
