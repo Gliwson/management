@@ -1,4 +1,4 @@
-package pl.management.map.config;
+package pl.management.config;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

@@ -8,7 +8,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import pl.management.map.config.ConfigProperties;
+import pl.management.config.ConfigProperties;
 import pl.management.map.service.dto.ListJsonDTO;
 import pl.management.map.service.dto.PointDTO;
 import pl.management.map.service.dto.RowDTO;

@@ -1,4 +1,4 @@
-package pl.management.map.config;
+package pl.management.config;
 
 
 import org.springframework.beans.factory.annotation.Value;
