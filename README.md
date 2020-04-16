@@ -1,4 +1,4 @@
-# Projekt do zarządzania, pracami na mapie.
+# Projekt do zarządzania pracami na mapie.
 Projekt wykorzystuje Google Sheets do zbierania danych z arkusza kalkulacyjnego, gdzie w specyficzny
 sposób są oznaczone komórki np. zielony kolor komórki oznacza "praca została zakończona".
 W dwóch kolumnach występują linki do dysku oraz lokalizacji google.
