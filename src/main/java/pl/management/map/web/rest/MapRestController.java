@@ -18,8 +18,8 @@ import java.util.List;
 @RequestMapping("/api")
 public class MapRestController {
 
-    private DataRepoCSV dataRepo;
-    private ImportSheetsGoogleJson importSheetsGoogleJson;
+    private final DataRepoCSV dataRepo;
+    private final ImportSheetsGoogleJson importSheetsGoogleJson;
 
     public MapRestController(DataRepoCSV dataRepo, ImportSheetsGoogleJson importSheetsGoogleJson) {
         this.dataRepo = dataRepo;

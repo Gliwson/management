@@ -30,7 +30,6 @@ public class DataRepoCSV {
         this.pointList.add(newPoint);
         invoiced = getPointList().stream().filter(point -> point.getColorsName()
                 .equals("#000000")).collect(Collectors.toList());
-
         done = getPointList()
                 .stream().filter(point -> point.getColorsName()
                         .equals("#00ff00") && point.getColorsComments().equals("#00ff00")).collect(Collectors.toList());

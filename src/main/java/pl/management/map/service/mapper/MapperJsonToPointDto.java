@@ -17,11 +17,11 @@ import java.util.regex.Pattern;
 
 @Service
 public class MapperJsonToPointDto {
-    private DataRepoCSV dataRepoCSV;
+    private final DataRepoCSV dataRepoCSV;
 
     public static final Pattern SEARCH_COORDINATES_IN_URL_2 = Pattern.compile("(\\d{2}+[.]+\\d{7}+[,]+\\d{2}+[.]+\\d{7})");
     public static final Pattern SEARCH_COORDINATES_IN_URL = Pattern.compile("\\d{2}+[.]+\\d{5,}+[,]+\\d{2}+[.]+\\d{5,}");
-    private List<PointDTO> pointDTOS = new ArrayList<>();
+    private final List<PointDTO> pointDTOS = new ArrayList<>();
     private double lat = 0;
     private double lon = 0;
 

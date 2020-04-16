@@ -20,8 +20,8 @@ import java.util.List;
 @Service
 public class ImportSheetsGoogleJson {
 
-    private ConfigProperties configProperties;
-    private MapperJsonToPointDto mapperJsonToPointDto;
+    private final ConfigProperties configProperties;
+    private final MapperJsonToPointDto mapperJsonToPointDto;
 
     public ImportSheetsGoogleJson(ConfigProperties configProperties, MapperJsonToPointDto mapperJsonToPointDto) {
         this.configProperties = configProperties;
