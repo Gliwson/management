@@ -1,10 +1,10 @@
 # Projekt do zarządzania, pracami na mapie.
-Projekt wykorzystuje, Google Sheets do zbierania danych z arkusza kalkulacyjnego, gdzie w specyficzny
-sposób są oznaczone komórki np. zielony kolor komóri oznacza "praca została zakończona".
-W dwóch kolumnach występują linki do dysku google oraz lokalizacji google.
-Projekt ma za zadanie wyciągnąć z komórek lokalizacji link, oraz przekonwertować go na współrzędne.
+Projekt wykorzystuje Google Sheets do zbierania danych z arkusza kalkulacyjnego, gdzie w specyficzny
+sposób są oznaczone komórki np. zielony kolor komórki oznacza "praca została zakończona".
+W dwóch kolumnach występują linki do dysku oraz lokalizacji google.
+Projekt ma za zadanie wyciągnąć z komórek "lokalizacji" link oraz przekonwertować go na współrzędne.
 
-Poniżej znajduje się skrypt usługi Google Apps, dzięki któremu będziemy mogli pobrać dane z komórek,
+Poniżej znajduje się skrypt usługi Google Apps, dzięki któremu będziemy mogli pobrać dane z komórek
 i wysłać je w postaci JSONa.
 
 ```
