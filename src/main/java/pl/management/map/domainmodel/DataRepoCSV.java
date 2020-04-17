@@ -1,7 +1,6 @@
-package pl.management.map.repository;
+package pl.management.map.domainmodel;
 
 import org.springframework.stereotype.Repository;
-import pl.management.map.domain.PointDifference;
 import pl.management.map.service.dto.PointDTO;
 
 import java.util.ArrayList;
