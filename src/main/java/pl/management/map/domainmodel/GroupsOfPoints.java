@@ -1,5 +1,5 @@
 package pl.management.map.domainmodel;
 
-public enum PointDifference {
+public enum GroupsOfPoints {
     INVOICED, DONE, COMMENTS, OFF, OTHER, ALL
 }

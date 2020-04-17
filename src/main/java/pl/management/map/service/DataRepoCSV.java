@@ -1,6 +1,7 @@
-package pl.management.map.domainmodel;
+package pl.management.map.service;
 
 import org.springframework.stereotype.Repository;
+import pl.management.map.domainmodel.GroupsOfPoints;
 import pl.management.map.service.dto.PointDTO;
 
 import java.util.ArrayList;
@@ -75,7 +76,7 @@ public class DataRepoCSV {
         other = new ArrayList<>();
     }
 
-    public List<PointDTO> getPointByDifference(PointDifference point) {
+    public List<PointDTO> getPointByDifference(GroupsOfPoints point) {
         switch (point) {
             case INVOICED:
                 return getInvoiced();
