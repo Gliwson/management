@@ -1,8 +1,7 @@
-package pl.management.map.service.json;
+package pl.management.map.service.schedul.json;
 
 
 import com.google.gson.Gson;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -19,12 +18,15 @@ import java.util.List;
 
 @Log4j2
 @Service
-@RequiredArgsConstructor
 public class ImportSheetsGoogleJson {
 
-    @Value("urlJson")
-    private final String URL_JSON;
+    @Value("${urlJson}")
+    private String URL_JSON;
     private final MapperJsonToPointDto mapperJsonToPointDto;
+
+    public ImportSheetsGoogleJson(MapperJsonToPointDto mapperJsonToPointDto) {
+        this.mapperJsonToPointDto = mapperJsonToPointDto;
+    }
 
     public List<RowDTO> getJson() {
         RestTemplate restTemplate = new RestTemplate();

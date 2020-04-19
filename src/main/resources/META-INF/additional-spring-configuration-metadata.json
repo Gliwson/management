@@ -1,9 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "urlJson",
-      "type": "java.lang.String",
-      "description": "Description for urlJson."
-    }
-  ]
-}

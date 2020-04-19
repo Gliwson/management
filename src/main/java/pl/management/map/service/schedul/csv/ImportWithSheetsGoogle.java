@@ -1,4 +1,4 @@
-package pl.management.map.service.csv;
+package pl.management.map.service.schedul.csv;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -30,7 +30,7 @@ public class ImportWithSheetsGoogle {
 
     @Value("urlCSV")
     private static String URL_CSV_SHEETS;
-    private DataRepoCSV dataRepo;
+    private final DataRepoCSV dataRepo;
 
     private double lat = 0;
     private double lon = 0;

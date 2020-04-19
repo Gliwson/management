@@ -1,0 +1,344 @@
+2020-04-19 15:21:35.361  INFO 14152 --- [main] p.m.ManagementApplication                : Starting ManagementApplication on Gliwson-Gliwson with PID 14152 (C:\Workspace\management\target\classes started by Gliwson in C:\Workspace\management)
+2020-04-19 15:21:35.381  INFO 14152 --- [main] p.m.ManagementApplication                : No active profile set, falling back to default profiles: default
+2020-04-19 15:21:36.755  INFO 14152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-19 15:21:36.858  INFO 14152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92ms. Found 1 JPA repository interfaces.
+2020-04-19 15:21:37.796  INFO 14152 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2020-04-19 15:21:37.808  INFO 14152 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-04-19 15:21:37.810  INFO 14152 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-19 15:21:37.997  INFO 14152 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-04-19 15:21:37.998  INFO 14152 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 2522 ms
+2020-04-19 15:21:38.643  INFO 14152 --- [main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2020-04-19 15:21:38.788  INFO 14152 --- [main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2020-04-19 15:21:40.223  INFO 14152 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-19 15:21:40.288  INFO 14152 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String pl.management.map.service.schedul.csv.ImportWithSheetsGoogle.URL_CSV_SHEETS
+2020-04-19 15:21:40.363  WARN 14152 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-19 15:21:40.888  INFO 14152 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-19 15:21:41.327  INFO 14152 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-04-19 15:21:41.343  INFO 14152 --- [main] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-19 15:21:41.441  INFO 14152 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-19 15:21:41.444  INFO 14152 --- [main] p.m.ManagementApplication                : Started ManagementApplication in 7.11 seconds (JVM running for 12.266)
+2020-04-19 15:21:41.451  INFO 14152 --- [main] p.m.m.s.s.j.ImportSheetsGoogleJson       : Execute
+2020-04-19 15:21:44.363  INFO 14152 --- [RMI TCP Connection(2)-192.168.0.104] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-19 15:21:44.363  INFO 14152 --- [RMI TCP Connection(2)-192.168.0.104] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2020-04-19 15:21:44.378  INFO 14152 --- [RMI TCP Connection(2)-192.168.0.104] o.s.w.s.DispatcherServlet                : Completed initialization in 14 ms
+2020-04-19 15:22:10.001  INFO 14152 --- [scheduling-1] p.m.m.s.s.j.ImportSheetsGoogleJson       : Execute
+2020-04-19 15:23:10.002  INFO 14152 --- [scheduling-1] p.m.m.s.s.j.ImportSheetsGoogleJson       : Execute
+2020-04-19 15:24:10.002  INFO 14152 --- [scheduling-1] p.m.m.s.s.j.ImportSheetsGoogleJson       : Execute
+2020-04-19 15:24:47.509  INFO 1680 --- [main] p.m.ManagementApplication                : Starting ManagementApplication on Gliwson-Gliwson with PID 1680 (C:\Workspace\management\target\classes started by Gliwson in C:\Workspace\management)
+2020-04-19 15:24:47.526  INFO 1680 --- [main] p.m.ManagementApplication                : No active profile set, falling back to default profiles: default
+2020-04-19 15:24:49.124  INFO 1680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-19 15:24:49.254  INFO 1680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 113ms. Found 1 JPA repository interfaces.
+2020-04-19 15:24:50.231  INFO 1680 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2020-04-19 15:24:50.251  INFO 1680 --- [main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2020-04-19 15:24:50.252  INFO 1680 --- [main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-19 15:24:50.460  INFO 1680 --- [main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2020-04-19 15:24:50.461 DEBUG 1680 --- [main] o.s.w.c.ContextLoader                    : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-04-19 15:24:50.461  INFO 1680 --- [main] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 2857 ms
+2020-04-19 15:24:50.976  INFO 1680 --- [main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2020-04-19 15:24:51.111  INFO 1680 --- [main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2020-04-19 15:24:52.317  INFO 1680 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-19 15:24:52.375  INFO 1680 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String pl.management.map.service.schedul.csv.ImportWithSheetsGoogle.URL_CSV_SHEETS
+2020-04-19 15:24:52.440  WARN 1680 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-19 15:24:52.894  INFO 1680 --- [main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-19 15:24:52.918 DEBUG 1680 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-04-19 15:24:52.988 DEBUG 1680 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2020-04-19 15:24:53.048 DEBUG 1680 --- [main] o.s.w.s.h.SimpleUrlHandlerMapping        : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-04-19 15:24:53.063 DEBUG 1680 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-04-19 15:24:53.317  INFO 1680 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-04-19 15:24:53.330  INFO 1680 --- [main] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-19 15:24:53.424  INFO 1680 --- [main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-19 15:24:53.427  INFO 1680 --- [main] p.m.ManagementApplication                : Started ManagementApplication in 6.967 seconds (JVM running for 12.87)
+2020-04-19 15:24:53.434  INFO 1680 --- [main] p.m.m.s.s.j.ImportSheetsGoogleJson       : Execute
+2020-04-19 15:24:53.546  INFO 1680 --- [RMI TCP Connection(3)-192.168.0.104] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-19 15:24:53.547  INFO 1680 --- [RMI TCP Connection(3)-192.168.0.104] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2020-04-19 15:24:53.548 DEBUG 1680 --- [RMI TCP Connection(3)-192.168.0.104] o.s.w.s.DispatcherServlet                : Detected StandardServletMultipartResolver
+2020-04-19 15:24:53.566 DEBUG 1680 --- [RMI TCP Connection(3)-192.168.0.104] o.s.w.s.DispatcherServlet                : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-04-19 15:24:53.566  INFO 1680 --- [RMI TCP Connection(3)-192.168.0.104] o.s.w.s.DispatcherServlet                : Completed initialization in 18 ms
+2020-04-19 15:24:55.179 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP GET https://script.google.com/macros/s/AKfycbxbXbG3Gb5sEM2kfRxrFrtQEqSo0dgv_v9ZC4uvRjjLRLnJY8ZH/exec
+2020-04-19 15:24:55.183 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Accept=[text/plain, application/json, application/*+json, */*]
+2020-04-19 15:24:57.287 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 200 OK
+2020-04-19 15:24:57.289 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Reading to [java.lang.String] as "application/json;charset=utf-8"
+2020-04-19 15:24:57.409 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/gAEgLGr1jXqQ2nv96
+2020-04-19 15:24:57.604 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:57.611 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/HKavNXUT2XAZ1Ejy7
+2020-04-19 15:24:57.732 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:57.737 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/HCD1UQ4YNnha797u6
+2020-04-19 15:24:57.837 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:57.841 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/srPGVBTnVDeutFyC7
+2020-04-19 15:24:57.941 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:57.944 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/rGCT2xfJWDeFwMPK6
+2020-04-19 15:24:58.068 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.071 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/fhqYn7bbP11dQUBd7
+2020-04-19 15:24:58.163 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.167 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/P6adkEaCsEUCbQ8k8
+2020-04-19 15:24:58.290 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.295 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/xDKqjpgqWu7Di84A6
+2020-04-19 15:24:58.382 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.386 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/dA4qJZmZm3NgopqDA
+2020-04-19 15:24:58.527 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.530 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/vgTdAPK1yLhqMSG58
+2020-04-19 15:24:58.671 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.675 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/aB8ePoK4ESFeJq5w6
+2020-04-19 15:24:58.756 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.759 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/Ns5Eakd5GtdHLqDz8
+2020-04-19 15:24:58.895 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.898 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/92gNnaYfBdaXGWzGA
+2020-04-19 15:24:58.979 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:58.982 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/qvEDHhGWD4ShCK867
+2020-04-19 15:24:59.123 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:59.126 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/MaLCBSeqaKormxN17
+2020-04-19 15:24:59.209 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:59.214 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/NKjrXj7LcchMt6n58
+2020-04-19 15:24:59.346 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:59.350 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/DoTRRAaG2DirtJZdA
+2020-04-19 15:24:59.448 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:59.450 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/ABZozCkMaubwLnWC9
+2020-04-19 15:24:59.596 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:59.600 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/WrZaoDzWtj4bLdy89
+2020-04-19 15:24:59.681 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:59.684 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/e3VVkj8sfYNR2bvC7
+2020-04-19 15:24:59.804 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:59.807 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/e3VVkj8sfYNR2bvC7
+2020-04-19 15:24:59.901 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:24:59.905 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/k9fqJFdLBetBNHr88
+2020-04-19 15:25:00.016 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.019 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/91HNoSrZXygUAku66
+2020-04-19 15:25:00.125 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.128 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/fcWks7xUSDbEvm4D9
+2020-04-19 15:25:00.233 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.235 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/yQz8ppfdLqywMcST9
+2020-04-19 15:25:00.341 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.344 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/quekpYKBKEXnqTct6
+2020-04-19 15:25:00.451 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.454 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/npcq6mPa69UoNrRz6
+2020-04-19 15:25:00.582 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.586 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/E5kigNa6zbfzxj1BA
+2020-04-19 15:25:00.679 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.683 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/WrZaoDzWtj4bLdy89
+2020-04-19 15:25:00.801 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.804 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/P19e42tkMQSTZo518
+2020-04-19 15:25:00.895 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:00.898 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/WpYx3uBhNN2YncjX7
+2020-04-19 15:25:01.021 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.026 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/Cb3uA9qzHJTGy5bK9
+2020-04-19 15:25:01.125 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.128 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/6bHbodkP2GU6LbjF6
+2020-04-19 15:25:01.258 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.261 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/G4QRjeS5L75nCKuX7
+2020-04-19 15:25:01.395 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.398 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/63HNJWKXfYv1Xs4h8
+2020-04-19 15:25:01.533 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.536 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/W7sqr8ebryzFNof98
+2020-04-19 15:25:01.617 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.620 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/MdhEgUgmkuC58qmE6
+2020-04-19 15:25:01.753 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.756 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/rMU9iKy9JVBTtLR98
+2020-04-19 15:25:01.841 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.844 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/HkW8FV5ggkGQq1uS7
+2020-04-19 15:25:01.972 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:01.976 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/fn57XHFWPWq1F2Hh9
+2020-04-19 15:25:02.065 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.068 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/4CspfpjR7VGnjgxx8
+2020-04-19 15:25:02.194 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.197 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/T9N5gSWytJdSSeYH8
+2020-04-19 15:25:02.293 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.296 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/PGrEJHYqc655RK8z7
+2020-04-19 15:25:02.409 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.412 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/drwHTHGMQzmUemm88
+2020-04-19 15:25:02.505 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.508 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/UZuQfWQN4XmvTBP49
+2020-04-19 15:25:02.634 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.638 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/xuTNgurhtzEtRFPX6
+2020-04-19 15:25:02.724 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.727 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/xEQQHtvuxBqGuLW5A
+2020-04-19 15:25:02.848 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.851 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/PTtE7JPNTH4Zp83D6
+2020-04-19 15:25:02.938 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:02.942 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/Mpkvv4B3gAJXQHcH8
+2020-04-19 15:25:03.079 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.082 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/VLPRfv4386tc9rmv8
+2020-04-19 15:25:03.179 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.182 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/NKeaPBJtdJMDjruB8
+2020-04-19 15:25:03.305 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.309 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/3Rfph3hiGnchdmc7A
+2020-04-19 15:25:03.398 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.401 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/s1b5YvxYzdnURWPT7
+2020-04-19 15:25:03.528 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.531 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/dE6LzyL6MVJ8ErDr7
+2020-04-19 15:25:03.608 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.612 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/4LbReWiEfnetWruY9
+2020-04-19 15:25:03.747 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.751 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/GGkwA5jspWRzpDWk9
+2020-04-19 15:25:03.842 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.845 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/4LbReWiEfnetWruY9
+2020-04-19 15:25:03.972 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:03.975 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/SctRjBAyAPbCtMDi9
+2020-04-19 15:25:04.064 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.067 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/64tZQALRTqALCYDJ7
+2020-04-19 15:25:04.201 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.204 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/XYAhRUeBRHCTv8zE7
+2020-04-19 15:25:04.293 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.296 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/X6nXZ3bqmwAQfqKK7
+2020-04-19 15:25:04.431 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.435 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/t5gv9hFwpr666FvPA
+2020-04-19 15:25:04.527 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.529 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/NoCTWWyDb6Q3sP2j8
+2020-04-19 15:25:04.661 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.664 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/1qYJFoztruzyfbba9
+2020-04-19 15:25:04.769 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.772 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/WuVRgjYK31ZVGE1G8
+2020-04-19 15:25:04.874 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.877 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/sVd1gtmRRgs7KWLR6
+2020-04-19 15:25:04.995 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:04.998 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/mwT21jCRSAKU3cDa9
+2020-04-19 15:25:05.098 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.101 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/22Pqjv8LMKWGFaV76
+2020-04-19 15:25:05.222 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.224 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/NbeG9TLs4Ghd6PjT7
+2020-04-19 15:25:05.313 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.316 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/NbeG9TLs4Ghd6PjT7
+2020-04-19 15:25:05.432 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.435 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/3cpQSBtBGPJom7zYA
+2020-04-19 15:25:05.519 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.522 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/CwiZEpMtRqKknFAw6
+2020-04-19 15:25:05.648 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.651 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/nvYopHyPbbDk2ybN9
+2020-04-19 15:25:05.745 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.748 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/hS8LeN4iMKvHBnFy7
+2020-04-19 15:25:05.857 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.860 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/MtBHRSrwJP8mXGq7A
+2020-04-19 15:25:05.969 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:05.972 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/rpNXHse8gCnPDCpF8
+2020-04-19 15:25:06.065 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.068 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/nSecCsp3H4X62A287
+2020-04-19 15:25:06.183 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.186 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/zAeXxXWMnRZU73La6
+2020-04-19 15:25:06.287 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.291 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/7pEgcHgqJuySEbTY6
+2020-04-19 15:25:06.393 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.397 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/FPXd9sR4AWCNHA8Z7
+2020-04-19 15:25:06.508 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.512 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/tXmKBPXzs7RrpVPo6
+2020-04-19 15:25:06.617 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.620 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/yCbwrm4WesJmUVK78
+2020-04-19 15:25:06.719 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.722 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/eq9iFeXdPU8sES8o6
+2020-04-19 15:25:06.829 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.831 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/rh8W4ciFtuF2Zvgx9
+2020-04-19 15:25:06.934 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:06.937 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/uSpYmbjcVeCj4Exo8
+2020-04-19 15:25:07.076 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.080 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/o6c6MHRygfskAzWU9
+2020-04-19 15:25:07.173 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.176 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/RYEYMo6mn81K4VZt7
+2020-04-19 15:25:07.308 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.310 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/jWDrv5btNV8AcL8K8
+2020-04-19 15:25:07.413 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.416 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/P6VUycwoZD65Dtt19
+2020-04-19 15:25:07.525 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.528 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/gTHccmvEjgfopYNC9
+2020-04-19 15:25:07.643 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.646 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/oHsu7jJCsHrVa2yY7
+2020-04-19 15:25:07.752 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.755 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/n4r8rujacUmA4vmFA
+2020-04-19 15:25:07.859 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.862 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/3HXHJt1KAYJMScm16
+2020-04-19 15:25:07.970 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:07.972 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/3SCZE9Bd4wwDe1N6A
+2020-04-19 15:25:08.098 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.101 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/xZE8ycbsGYv8MbVN9
+2020-04-19 15:25:08.176 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.179 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/tQ5Mo46qnNRudYiUA
+2020-04-19 15:25:08.271 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.273 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/3SCZE9Bd4wwDe1N6A
+2020-04-19 15:25:08.345 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.348 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/1LeHADqYSSHyNefN6
+2020-04-19 15:25:08.436 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.439 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/n1Bj6vaJ9C8rqshe6
+2020-04-19 15:25:08.513 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.516 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/S1cfWM86gwnMGHRh8
+2020-04-19 15:25:08.610 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.614 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/DKdiBer1RQXCKtMa8
+2020-04-19 15:25:08.706 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.709 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/iSRsnMcSZoKyBEyW8
+2020-04-19 15:25:08.792 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.795 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/2CjjxhVXDZmRzhAy6
+2020-04-19 15:25:08.868 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.872 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/M8qak8pE2wgs4Num6
+2020-04-19 15:25:08.948 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:08.951 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/32ykj9PaytFAjkDH7
+2020-04-19 15:25:09.043 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.046 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/LaPm6p3vFqbY9nt4A
+2020-04-19 15:25:09.122 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.124 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/QHXnLsXP21CedX158
+2020-04-19 15:25:09.205 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.208 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/aJMXjrxXeQwdWUW3A
+2020-04-19 15:25:09.287 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.289 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/xqWF2wrFjHS7MstX9
+2020-04-19 15:25:09.376 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.379 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/DDWoGHQUm1gkuugV7
+2020-04-19 15:25:09.457 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.461 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/NHWUJnipja1bSjRY8
+2020-04-19 15:25:09.535 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.538 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/BcNsj7cjrVAwXedq8
+2020-04-19 15:25:09.618 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.622 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/74ZYy9xM2AxeSWLY6
+2020-04-19 15:25:09.709 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.714 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/CE7GMhQ9TZjch5Np6
+2020-04-19 15:25:09.806 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.809 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/u5gpBkHaBX4CgC9d7
+2020-04-19 15:25:09.886 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.888 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/vdYQYavKCw1eeCj76
+2020-04-19 15:25:09.971 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:09.974 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/iZEJU9yB8dXnLys16
+2020-04-19 15:25:10.002  INFO 1680 --- [scheduling-1] p.m.m.s.s.j.ImportSheetsGoogleJson       : Execute
+2020-04-19 15:25:10.005 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : HTTP GET https://script.google.com/macros/s/AKfycbxbXbG3Gb5sEM2kfRxrFrtQEqSo0dgv_v9ZC4uvRjjLRLnJY8ZH/exec
+2020-04-19 15:25:10.005 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : Accept=[text/plain, application/json, application/*+json, */*]
+2020-04-19 15:25:10.052 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.055 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/hEFtDQzmD75dr7j39
+2020-04-19 15:25:10.149 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.152 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/f5tA4wFfusj2KUmaA
+2020-04-19 15:25:10.234 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.237 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/3nfGA219mE5iazS78
+2020-04-19 15:25:10.331 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.334 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/GUND2AQByemdirVM7
+2020-04-19 15:25:10.415 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.418 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/Hqr82ZVnVvDSZpEB7
+2020-04-19 15:25:10.492 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.496 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/5da8wFZSSksUXmVu7
+2020-04-19 15:25:10.574 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.578 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/UtG9TywYoQDwukQD7
+2020-04-19 15:25:10.664 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.667 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/SMCSW2vExR1bTzPq5
+2020-04-19 15:25:10.751 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.755 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/SMCSW2vExR1bTzPq5
+2020-04-19 15:25:10.832 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.835 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/Vmo6MURtweVUt4a27
+2020-04-19 15:25:10.932 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:10.935 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/JzkHH3GbeYUSDt6EA
+2020-04-19 15:25:11.013 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.016 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/HVCqheYQcJnmwbmo8
+2020-04-19 15:25:11.097 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.100 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/Gs8n55mhQWFT6ohNA
+2020-04-19 15:25:11.186 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.188 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/yYtGxnQafXR6oTqu7
+2020-04-19 15:25:11.270 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.273 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/WFSDWvqMFVz24zFz8
+2020-04-19 15:25:11.354 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.356 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/yDit8zdPCMZr3jsX9
+2020-04-19 15:25:11.437 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.440 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/h4Ey5vuwYSMdHm6RA
+2020-04-19 15:25:11.520 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.523 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/MPvTpTaufaLKKrV38
+2020-04-19 15:25:11.559 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : Response 200 OK
+2020-04-19 15:25:11.560 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : Reading to [java.lang.String] as "application/json;charset=utf-8"
+2020-04-19 15:25:11.609 DEBUG 1680 --- [main] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.654 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/gAEgLGr1jXqQ2nv96
+2020-04-19 15:25:11.724 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.727 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/HKavNXUT2XAZ1Ejy7
+2020-04-19 15:25:11.799 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.802 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/HCD1UQ4YNnha797u6
+2020-04-19 15:25:11.882 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.884 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/srPGVBTnVDeutFyC7
+2020-04-19 15:25:11.970 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : Response 302 FOUND
+2020-04-19 15:25:11.976 DEBUG 1680 --- [scheduling-1] o.s.w.c.RestTemplate                     : HTTP HEAD https://goo.gl/maps/rGCT2xfJWDeFwMPK6
