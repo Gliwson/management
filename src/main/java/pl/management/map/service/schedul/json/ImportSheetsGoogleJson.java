@@ -37,7 +37,7 @@ public class ImportSheetsGoogleJson {
     }
 
     @EventListener(ApplicationReadyEvent.class)
-    @Scheduled(cron = "100 * 6-20 * * *")
+    @Scheduled(cron = "50 * 6-20 * * *")
     public List<PointDTO> getJson2() {
         log.info("Execute");
         List<RowDTO> json = getJson();
