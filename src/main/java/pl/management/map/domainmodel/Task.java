@@ -1,17 +1,22 @@
 package pl.management.map.domainmodel;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
-//@Entity
-//@Table(name = "task")
-//@Getter
-//@Setter
-//@Data
+@Entity
+@Table(name = "task")
+@Getter
+@Setter
+@Data
 public class Task {
 
-    //    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "ID")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Integer id;
     private LocalDateTime recordingTime;
     private double coordinateX;
