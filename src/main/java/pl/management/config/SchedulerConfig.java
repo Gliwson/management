@@ -18,7 +18,7 @@ public class SchedulerConfig implements SchedulingConfigurer {
 
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
-        taskRegistrar.addCronTask(importSheetsGoogleJson::getJson2, "0 0/1 6-22 * * *");
+        taskRegistrar.addCronTask(importSheetsGoogleJson::getJson2, "0 0/10 6-22 * * *");
 
     }
 }
