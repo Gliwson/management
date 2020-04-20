@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.management.map.domainmodel.GroupsOfPoints;
+import pl.management.map.domainmodel.GroupsOfTask;
 import pl.management.map.service.DataRepoCSV;
 import pl.management.map.service.dto.PointDTO;
 
@@ -20,8 +20,9 @@ public class MapRestController {
 
     //Todo replace the point with group
     @GetMapping("/points")
-    public List<PointDTO> getPoint(@RequestParam(name = "point") GroupsOfPoints point) {
+    public List<PointDTO> getTasksFromGroup(@RequestParam(name = "point") GroupsOfTask point) {
         return dataRepo.getPointByDifference(point);
+
     }
 
 }

@@ -21,7 +21,7 @@ public class Task {
     private LocalDateTime recordingTime;
     private double coordinateX;
     private double coordinateY;
-    private GroupsOfPoints groupsOfPoints;
+    private GroupsOfTask groupsOfPoints;
     private Integer position;
     private String name;
     private String status;

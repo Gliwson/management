@@ -1,5 +1,5 @@
 package pl.management.map.domainmodel;
 
-public enum GroupsOfPoints {
+public enum GroupsOfTask {
     INVOICED, DONE, COMMENTS, OFF, OTHER, ALL
 }
