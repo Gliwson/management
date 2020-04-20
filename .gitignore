@@ -10,3 +10,4 @@ password.properties
 *.ipr
 /.mvn/
 /.idea/
+/logs/

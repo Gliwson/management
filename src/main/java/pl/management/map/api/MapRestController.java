@@ -25,4 +25,10 @@ public class MapRestController {
 
     }
 
+    @GetMapping()
+    public String getTest() {
+        return "DONE";
+
+    }
+
 }
