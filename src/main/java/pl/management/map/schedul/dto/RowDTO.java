@@ -1,4 +1,4 @@
-package pl.management.map.service.dto;
+package pl.management.map.schedul.dto;
 
 import lombok.Data;
 

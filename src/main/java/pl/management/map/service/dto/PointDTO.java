@@ -9,6 +9,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class PointDTO implements Serializable {
 
     private double x;

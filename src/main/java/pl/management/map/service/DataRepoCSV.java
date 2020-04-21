@@ -1,7 +1,7 @@
 package pl.management.map.service;
 
 import org.springframework.stereotype.Repository;
-import pl.management.map.domainmodel.GroupsOfTask;
+import pl.management.domainmodel.GroupsOfTask;
 import pl.management.map.service.dto.PointDTO;
 
 import java.util.ArrayList;

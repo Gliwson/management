@@ -1,4 +1,4 @@
-package pl.management.map.domainmodel;
+package pl.management.domainmodel;
 
 import lombok.Data;
 import lombok.Getter;

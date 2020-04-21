@@ -1,4 +1,4 @@
-package pl.management.map.domainmodel;
+package pl.management.domainmodel;
 
 public interface TaskRepository {
 

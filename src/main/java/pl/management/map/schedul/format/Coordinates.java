@@ -1,63 +1,39 @@
-package pl.management.map.service.mapper;
+package pl.management.map.schedul.format;
 
 import org.springframework.http.HttpHeaders;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
-import pl.management.map.service.DataRepoCSV;
-import pl.management.map.service.dto.PointDTO;
-import pl.management.map.service.dto.RowDTO;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Service
-public class MapperJsonToPointDto {
-    private final DataRepoCSV dataRepoCSV;
 
-    public static final Pattern SEARCH_COORDINATES_IN_URL_2 = Pattern.compile("(\\d{2}+[.]+\\d{7}+[,]+\\d{2}+[.]+\\d{7})");
-    public static final Pattern SEARCH_COORDINATES_IN_URL = Pattern.compile("\\d{2}+[.]+\\d{5,}+[,]+\\d{2}+[.]+\\d{5,}");
-    private final List<PointDTO> pointDTOS = new ArrayList<>();
+public class Coordinates {
+
+    private Pattern SEARCH_COORDINATES_IN_URL;
+    private Pattern SEARCH_COORDINATES_IN_URL_2;
     private double lat = 0;
     private double lon = 0;
 
-    public MapperJsonToPointDto(DataRepoCSV dataRepoCSV) {
-        this.dataRepoCSV = dataRepoCSV;
+    public double getLat() {
+        return lat;
     }
 
-    public List<PointDTO> map(List<RowDTO> json) {
-        if (!dataRepoCSV.getPointList().isEmpty()) {
-            dataRepoCSV.clear();
-        }
-
-        if (json == null) {
-            throw new IllegalStateException("json is null");
-        }
-
-        for (RowDTO e : json) {
-            if (coordinates(e.getUrlLocation())) continue;
-            PointDTO pointDTO = PointDTO.builder()
-                    .id(e.getId().toString())
-                    .name(e.getName())
-                    .colorsComments(e.getCommentsColor())
-                    .colorsName(e.getNameColor())
-                    .locationHref(e.getUrlLocation())
-                    .dyskHref(e.getUrlDysk())
-                    .x(lat)
-                    .y(lon)
-                    .build();
-            pointDTOS.add(pointDTO);
-            dataRepoCSV.addPoint(new PointDTO(lat, lon, e.getId().toString(), e.getName(),
-                    e.getComments(), e.getUrlLocation(), e.getNameColor(), e.getCommentsColor(), e.getUrlDysk()));
-        }
-        return pointDTOS;
+    public double getLon() {
+        return lon;
     }
 
-    private boolean coordinates(String sURL) {
+    public void setSEARCH_COORDINATES_IN_URL(Pattern SEARCH_COORDINATES_IN_URL) {
+        this.SEARCH_COORDINATES_IN_URL = SEARCH_COORDINATES_IN_URL;
+    }
+
+    public void setSEARCH_COORDINATES_IN_URL_2(Pattern SEARCH_COORDINATES_IN_URL_2) {
+        this.SEARCH_COORDINATES_IN_URL_2 = SEARCH_COORDINATES_IN_URL_2;
+    }
+
+    public boolean coordinates(String sURL) {
         if (sURL.equals("")) {
             return true;
         }
