@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImportPointDto {
+
     private TypeOfImport typeOfImport;
 
     public List<PointDTO> anImport() {

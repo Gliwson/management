@@ -2,8 +2,6 @@ package pl.management.map.schedul.format;
 
 import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.management.map.schedul.dto.ListJsonDTO;
 import pl.management.map.schedul.dto.RowDTO;
@@ -14,29 +12,30 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 @Log4j2
-@Service
 public class MapperJsonToPointDto implements TypeOfImport {
-
 
     public static final Pattern SEARCH_COORDINATES_IN_URL_2 = Pattern.compile("(\\d{2}+[.]+\\d{7}+[,]+\\d{2}+[.]+\\d{7})");
     public static final Pattern SEARCH_COORDINATES_IN_URL = Pattern.compile("\\d{2}+[.]+\\d{5,}+[,]+\\d{2}+[.]+\\d{5,}");
 
-    @Value("${urlJson}")
-    private String urlJson;
+    private final String URL_JSON;
 
     private final List<PointDTO> pointDTOS = new ArrayList<>();
+
+    public MapperJsonToPointDto(String urlJson) {
+        this.URL_JSON = urlJson;
+    }
 
     public List<PointDTO> map() {
         Coordinates c = new Coordinates();
         RestTemplate restTemplate = new RestTemplate();
         Gson gson = new Gson();
 
-        log.info(urlJson);
+        log.info(URL_JSON);
 
-        String stringJson = restTemplate.getForObject(urlJson, String.class);
+        String stringJson = restTemplate.getForObject(URL_JSON, String.class);
         ListJsonDTO user = gson.fromJson(stringJson, ListJsonDTO.class);
         List<RowDTO> jsonList = user.getUser();
-        log.info("Execute");
+        log.info("Execute json");
 
         c.setSEARCH_COORDINATES_IN_URL(SEARCH_COORDINATES_IN_URL);
         c.setSEARCH_COORDINATES_IN_URL_2(SEARCH_COORDINATES_IN_URL_2);

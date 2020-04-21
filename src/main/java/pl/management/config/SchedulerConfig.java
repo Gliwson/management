@@ -11,11 +11,16 @@ import pl.management.map.schedul.format.MapperJsonToPointDto;
 @EnableScheduling
 public class SchedulerConfig implements SchedulingConfigurer {
 
+    private final EnvironmentConfig environmentConfig;
+
+    public SchedulerConfig(EnvironmentConfig environmentConfig) {
+        this.environmentConfig = environmentConfig;
+    }
+
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
         ImportPointDto pointDTO = new ImportPointDto();
-        pointDTO.setTypeOfImport(new MapperJsonToPointDto());
-
+        pointDTO.setTypeOfImport(new MapperJsonToPointDto(environmentConfig.getURL_JSON_SHEETS()));
         taskRegistrar.addCronTask(
                 pointDTO::anImport
                 , "0 0/1 * * * *");

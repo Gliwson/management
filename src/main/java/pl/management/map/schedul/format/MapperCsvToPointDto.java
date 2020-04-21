@@ -3,9 +3,7 @@ package pl.management.map.schedul.format;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.management.map.exceptions.BlankSheetException;
 import pl.management.map.service.dto.PointDTO;
@@ -17,17 +15,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-
-@Service
 public class MapperCsvToPointDto implements TypeOfImport {
 
     public static final Pattern SEARCH_COORDINATES_IN_URL_2 = Pattern.compile("(\\d{2}+[.]+\\d{7}+[,]+\\d{2}+[.]+\\d{7})");
     public static final Pattern SEARCH_COORDINATES_IN_URL = Pattern.compile("\\d{2}+[.]+\\d{5,}+[,]+\\d{2}+[.]+\\d{5,}");
 
-    @Value("${urlCSV}")
+
     private static String URL_CSV_SHEETS;
 
     private final List<PointDTO> pointDTOS = new ArrayList<>();
+
+    public static void setUrlCsvSheets(String urlCsvSheets) {
+        URL_CSV_SHEETS = urlCsvSheets;
+    }
 
     public List<PointDTO> map() throws BlankSheetException, IOException {
         Coordinates c = new Coordinates();
