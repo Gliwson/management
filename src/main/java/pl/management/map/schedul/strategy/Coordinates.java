@@ -1,4 +1,4 @@
-package pl.management.map.schedul.format;
+package pl.management.map.schedul.strategy;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.client.HttpClientErrorException;
@@ -25,12 +25,12 @@ public class Coordinates {
         return lon;
     }
 
-    public void setSEARCH_COORDINATES_IN_URL(Pattern SEARCH_COORDINATES_IN_URL) {
-        this.SEARCH_COORDINATES_IN_URL = SEARCH_COORDINATES_IN_URL;
+    public void setSEARCH_COORDINATES_IN_URL(Pattern searchCoordinatesInUrl) {
+        this.SEARCH_COORDINATES_IN_URL = searchCoordinatesInUrl;
     }
 
-    public void setSEARCH_COORDINATES_IN_URL_2(Pattern SEARCH_COORDINATES_IN_URL_2) {
-        this.SEARCH_COORDINATES_IN_URL_2 = SEARCH_COORDINATES_IN_URL_2;
+    public void setSEARCH_COORDINATES_IN_URL_2(Pattern searchCoordinatesInUrl2) {
+        this.SEARCH_COORDINATES_IN_URL_2 = searchCoordinatesInUrl2;
     }
 
     public boolean coordinates(String sURL) {

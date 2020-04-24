@@ -1,38 +1,35 @@
-package pl.management.map.schedul.format;
+package pl.management.map.schedul.strategy;
 
 import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.management.map.schedul.dto.ListJsonDTO;
+import pl.management.map.schedul.dto.PointDTO;
 import pl.management.map.schedul.dto.RowDTO;
-import pl.management.map.service.dto.PointDTO;
+import pl.management.map.schedul.model.Format;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
 @Log4j2
+@Service
 public class MapperJsonToPointDto implements TypeOfImport {
 
     public static final Pattern SEARCH_COORDINATES_IN_URL_2 = Pattern.compile("(\\d{2}+[.]+\\d{7}+[,]+\\d{2}+[.]+\\d{7})");
     public static final Pattern SEARCH_COORDINATES_IN_URL = Pattern.compile("\\d{2}+[.]+\\d{5,}+[,]+\\d{2}+[.]+\\d{5,}");
 
-    private final String URL_JSON;
-
-    private final List<PointDTO> pointDTOS = new ArrayList<>();
-
-    public MapperJsonToPointDto(String urlJson) {
-        this.URL_JSON = urlJson;
-    }
-
-    public List<PointDTO> map() {
+    @Override
+    public List<PointDTO> map(String url) {
+        List<PointDTO> pointDTOS = new ArrayList<>();
         Coordinates c = new Coordinates();
         RestTemplate restTemplate = new RestTemplate();
         Gson gson = new Gson();
 
-        log.info(URL_JSON);
+        log.info(url);
 
-        String stringJson = restTemplate.getForObject(URL_JSON, String.class);
+        String stringJson = restTemplate.getForObject(url, String.class);
         ListJsonDTO user = gson.fromJson(stringJson, ListJsonDTO.class);
         List<RowDTO> jsonList = user.getUser();
         log.info("Execute json");
@@ -44,6 +41,7 @@ public class MapperJsonToPointDto implements TypeOfImport {
             throw new IllegalStateException("json is null");
         }
 
+        //TODO replace the PointDto with Task
         for (RowDTO e : jsonList) {
             if (c.coordinates(e.getUrlLocation())) continue;
             PointDTO pointDTO = PointDTO.builder()
@@ -61,5 +59,10 @@ public class MapperJsonToPointDto implements TypeOfImport {
             log.info(pointDTO);
         }
         return pointDTOS;
+    }
+
+    @Override
+    public Format getStrategyName() {
+        return Format.JSON;
     }
 }
