@@ -19,5 +19,4 @@ public class ManagementApplication extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(ManagementApplication.class);
     }
-
 }

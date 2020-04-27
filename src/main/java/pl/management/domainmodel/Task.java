@@ -1,6 +1,7 @@
 package pl.management.domainmodel;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -13,7 +14,8 @@ import java.time.Instant;
 @Table(name = "TASK")
 @Getter
 @Setter
-@Data
+@Builder
+@AllArgsConstructor
 public class Task implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,14 +25,21 @@ public class Task implements Serializable {
     @Column(name = "ID")
     private Integer id;
 
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @JoinColumn(name = "TASK_VERSION_ID")
+    private TaskVersion taskVersion;
+
     private Integer position;
     private String name;
     private String status;
     private String date;
+
+    @Column(length = 1000)
     private String comments;
+
     @LastModifiedDate
     @Column(name = "LAST_MODIFIED_DATE")
-    private Instant lastModifiedDate = Instant.now();
+    private Instant lastModifiedDate;
     private GroupsOfTask groupsOfPoints;
 
     private String UrlDysk;
@@ -42,4 +51,6 @@ public class Task implements Serializable {
     private double coordinateX;
     private double coordinateY;
 
+    public Task() {
+    }
 }

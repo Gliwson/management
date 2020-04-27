@@ -56,7 +56,6 @@ public class MapperJsonToPointDto implements TypeOfImport {
                     .y(c.getLon())
                     .build();
             pointDTOS.add(pointDTO);
-            log.info(pointDTO);
         }
         return pointDTOS;
     }
