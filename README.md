@@ -73,8 +73,7 @@ for (var i in bgColors) {
 ```
 ## Pierwsze kroki
 Przed uruchomieniem powinniśmy dodać odpowiednie ścieżki w zmiennych środowiskowych.
-* databaseLogin=${DB_LOGIN}
-* databasePassword=${DB_PASSWORD}
+* spring.datasource.username=${DB_LOGIN}
+* spring.datasource.password=${DB_PASSWORD}
 * urlCSV=${URL_CSV_GOOGLE}
 * urlJson=${URL_JSON_GOOGLE}
-* envname=dev

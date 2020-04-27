@@ -25,16 +25,14 @@ public class SavePointDto {
         this.mapperTask = mapperTask;
     }
 
-    public void service() {
+    public void saveTODatabase() {
         List<PointDTO> strategy = importFactoryService.findStrategy(Format.JSON);
         List<TaskVersion> taskVersions = mapperTask.pointDtoToTaskVersion(strategy);
-        for (TaskVersion taskVersion : taskVersions) {
-            save(taskVersion);
-        }
+        taskVersionSaveToDatabase(taskVersions);
     }
 
     @Transactional
-    public void save(TaskVersion taskVersions) {
-        taskVersionRepository.save(taskVersions);
+    public void taskVersionSaveToDatabase(List<TaskVersion> taskVersions) {
+        taskVersionRepository.saveAll(taskVersions);
     }
 }

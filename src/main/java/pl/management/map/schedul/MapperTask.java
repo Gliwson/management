@@ -1,5 +1,6 @@
 package pl.management.map.schedul;
 
+import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 import pl.management.domainmodel.Task;
 import pl.management.domainmodel.TaskRepository;
@@ -7,7 +8,6 @@ import pl.management.domainmodel.TaskVersion;
 import pl.management.domainmodel.TaskVersionRepository;
 import pl.management.map.schedul.dto.PointDTO;
 
-import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.*;
 
@@ -23,15 +23,14 @@ public class MapperTask {
         this.taskRepository = taskRepository;
     }
 
-    @Transactional
     public List<TaskVersion> pointDtoToTaskVersion(List<PointDTO> pointDTOList) {
         List<TaskVersion> taskVersions = new ArrayList<>();
 
         for (PointDTO point : pointDTOList) {
             TaskVersion taskVersion = new TaskVersion();
             Set<Task> tasks = new HashSet<>();
-            Integer id = null;
-            Optional<TaskVersion> byId;
+            Integer id = Integer.valueOf(point.getId());
+            Optional<TaskVersion> optionalTaskVersion;
             Task task = Task.builder()
                     .name(point.getName())
                     .position(Integer.valueOf(point.getId()))
@@ -45,16 +44,20 @@ public class MapperTask {
                     .lastModifiedDate(Instant.now())
                     .taskVersion(taskVersion)
                     .build();
-
-            if (taskRepository.existsByPosition(Integer.valueOf(point.getId()))) {
-                id = Integer.valueOf(point.getId());
+            //TODO reduce the number of queries
+            if (taskRepository.existsByPosition(id)) {
                 Optional<Task> firstByPosition = taskRepository.findFirstByPosition(id);
-                Task task1 = firstByPosition.get();
-                byId = taskVersionRepository.findById(task1.getTaskVersion().getId());
-                TaskVersion taskVersion1 = byId.get();
-                task.setTaskVersion(taskVersion1);
-                taskVersion1.getTask().add(task);
-                taskVersions.add(taskVersion1);
+                try {
+                    Task firstTask = firstByPosition.orElseThrow(() -> new NotFoundException("Task not found"));
+                    optionalTaskVersion = taskVersionRepository.findById(firstTask.getTaskVersion().getId());
+                    TaskVersion taskVersion1 = optionalTaskVersion.orElseThrow(() -> new NotFoundException("TaskVersion id not found"));
+
+                    task.setTaskVersion(taskVersion1);
+                    taskVersion1.getTask().add(task);
+                    taskVersions.add(taskVersion1);
+                } catch (NotFoundException e) {
+                    e.printStackTrace();
+                }
             } else {
                 tasks.add(task);
                 taskVersion.setTask(tasks);
