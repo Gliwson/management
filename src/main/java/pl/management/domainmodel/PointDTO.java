@@ -1,4 +1,4 @@
-package pl.management.map.schedul.dto;
+package pl.management.domainmodel;
 
 import lombok.*;
 

@@ -1,7 +1,7 @@
 package pl.management.map.schedul.strategy;
 
+import pl.management.domainmodel.PointDTO;
 import pl.management.map.exceptions.BlankSheetException;
-import pl.management.map.schedul.dto.PointDTO;
 import pl.management.map.schedul.model.Format;
 
 import java.io.IOException;

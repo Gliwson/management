@@ -2,11 +2,7 @@ package pl.management.map.schedul;
 
 import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
-import pl.management.domainmodel.Task;
-import pl.management.domainmodel.TaskRepository;
-import pl.management.domainmodel.TaskVersion;
-import pl.management.domainmodel.TaskVersionRepository;
-import pl.management.map.schedul.dto.PointDTO;
+import pl.management.domainmodel.*;
 
 import java.time.Instant;
 import java.util.*;

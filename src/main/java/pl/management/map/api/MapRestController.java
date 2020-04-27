@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.management.domainmodel.GroupsOfTask;
+import pl.management.domainmodel.PointDTO;
 import pl.management.domainmodel.TaskRepository;
-import pl.management.map.schedul.dto.PointDTO;
 import pl.management.map.service.PointGroupsService;
-import pl.management.map.service.dto.PointMapDto;
 
 import java.util.List;
 
@@ -27,10 +26,5 @@ public class MapRestController {
     @GetMapping("/points")
     public List<PointDTO> getTasksFromGroup(@RequestParam(name = "point") GroupsOfTask point) {
         return dataRepo.getPointByDifference(point);
-    }
-
-    @GetMapping
-    public List<PointMapDto> getTasksFromGroup() {
-        return taskRepository.findAllWithLastModifiedDate();
     }
 }

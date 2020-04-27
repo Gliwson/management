@@ -2,9 +2,9 @@ package pl.management.map.schedul;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
+import pl.management.domainmodel.PointDTO;
 import pl.management.domainmodel.TaskVersion;
 import pl.management.domainmodel.TaskVersionRepository;
-import pl.management.map.schedul.dto.PointDTO;
 import pl.management.map.schedul.factory.ImportFactoryService;
 import pl.management.map.schedul.model.Format;
 

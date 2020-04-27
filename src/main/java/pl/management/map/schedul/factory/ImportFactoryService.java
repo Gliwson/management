@@ -2,8 +2,8 @@ package pl.management.map.schedul.factory;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import pl.management.domainmodel.PointDTO;
 import pl.management.map.exceptions.BlankSheetException;
-import pl.management.map.schedul.dto.PointDTO;
 import pl.management.map.schedul.model.Format;
 import pl.management.map.schedul.strategy.TypeOfImport;
 

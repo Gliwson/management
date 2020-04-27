@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import pl.management.domainmodel.PointDTO;
 import pl.management.map.schedul.dto.ListJsonDTO;
-import pl.management.map.schedul.dto.PointDTO;
 import pl.management.map.schedul.dto.RowDTO;
 import pl.management.map.schedul.model.Format;
 
