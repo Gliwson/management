@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.management.domainmodel.GroupsOfTask;
 import pl.management.domainmodel.PointDTO;
-import pl.management.domainmodel.TaskRepository;
 import pl.management.map.service.PointGroupsService;
 
 import java.util.List;
@@ -19,12 +18,11 @@ import java.util.List;
 @Log4j2
 public class MapRestController {
 
-    private final PointGroupsService dataRepo;
-    private final TaskRepository taskRepository;
+    private final PointGroupsService pointGroupsService;
 
     //Todo replace the point with group
     @GetMapping("/points")
     public List<PointDTO> getTasksFromGroup(@RequestParam(name = "point") GroupsOfTask point) {
-        return dataRepo.getPointByDifference(point);
+        return pointGroupsService.getPointByDifference(point);
     }
 }
