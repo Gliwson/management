@@ -42,8 +42,8 @@ public class Task implements Serializable {
     private Instant lastModifiedDate;
     private GroupsOfTask groupsOfPoints;
 
-    private String UrlDysk;
-    private String UrlLocation;
+    private String urlDysk;
+    private String urlLocation;
 
     private String colorsName;
     private String colorsComments;

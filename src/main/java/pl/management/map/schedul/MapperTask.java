@@ -39,8 +39,8 @@ public class MapperTask {
                     .colorsName(point.getColorsName())
                     .coordinateX(point.getX())
                     .coordinateY(point.getY())
-                    .UrlDysk(point.getDyskHref())
-                    .UrlLocation(point.getLocationHref())
+                    .urlDysk(point.getDyskHref())
+                    .urlLocation(point.getLocationHref())
                     .lastModifiedDate(Instant.now())
                     .taskVersion(taskVersion)
                     .build();

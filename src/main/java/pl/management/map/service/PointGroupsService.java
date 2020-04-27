@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
-public class DataRepoCSV {
+public class PointGroupsService {
 
     private List<PointDTO> pointList;
     private List<PointDTO> invoiced;
@@ -18,7 +18,7 @@ public class DataRepoCSV {
     private List<PointDTO> off;
     private List<PointDTO> other;
 
-    public DataRepoCSV() {
+    public PointGroupsService() {
         this.pointList = new ArrayList<>();
     }
 

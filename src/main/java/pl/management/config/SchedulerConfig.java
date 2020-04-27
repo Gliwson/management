@@ -20,6 +20,6 @@ public class SchedulerConfig implements SchedulingConfigurer {
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
         taskRegistrar.addCronTask(savePointDto::saveTODatabase,
-                "0 0/1 * * * *");
+                "0 0/10 6-22 * * *");
     }
 }

@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.management.domainmodel.GroupsOfTask;
+import pl.management.domainmodel.TaskRepository;
 import pl.management.map.schedul.dto.PointDTO;
-import pl.management.map.service.DataRepoCSV;
+import pl.management.map.service.PointGroupsService;
+import pl.management.map.service.dto.PointMapDto;
 
 import java.util.List;
 
@@ -18,11 +20,17 @@ import java.util.List;
 @Log4j2
 public class MapRestController {
 
-    private final DataRepoCSV dataRepo;
+    private final PointGroupsService dataRepo;
+    private final TaskRepository taskRepository;
 
     //Todo replace the point with group
     @GetMapping("/points")
     public List<PointDTO> getTasksFromGroup(@RequestParam(name = "point") GroupsOfTask point) {
         return dataRepo.getPointByDifference(point);
+    }
+
+    @GetMapping
+    public List<PointMapDto> getTasksFromGroup() {
+        return taskRepository.findAllWithLastModifiedDate();
     }
 }
