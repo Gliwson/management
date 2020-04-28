@@ -4,6 +4,7 @@ import javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 import pl.management.domainmodel.*;
 
+import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.*;
 
@@ -19,6 +20,7 @@ public class MapperTask {
         this.taskRepository = taskRepository;
     }
 
+    @Transactional
     public List<TaskVersion> pointDtoToTaskVersion(List<PointDTO> pointDTOList) {
         List<TaskVersion> taskVersions = new ArrayList<>();
 
