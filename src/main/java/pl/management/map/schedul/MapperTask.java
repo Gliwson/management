@@ -1,6 +1,7 @@
 package pl.management.map.schedul;
 
 import javassist.NotFoundException;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import pl.management.domainmodel.*;
 
@@ -9,6 +10,7 @@ import java.time.Instant;
 import java.util.*;
 
 @Service
+@Log4j2
 public class MapperTask {
 
     private final TaskVersionRepository taskVersionRepository;
@@ -22,8 +24,8 @@ public class MapperTask {
 
     @Transactional
     public List<TaskVersion> pointDtoToTaskVersion(List<PointDTO> pointDTOList) {
+        log.info("start session hibernate in pointDtoToTaskVersion");
         List<TaskVersion> taskVersions = new ArrayList<>();
-
         for (PointDTO point : pointDTOList) {
             TaskVersion taskVersion = new TaskVersion();
             Set<Task> tasks = new HashSet<>();
@@ -62,6 +64,7 @@ public class MapperTask {
                 taskVersions.add(taskVersion);
             }
         }
+        log.info("end session hibernate in pointDtoToTaskVersion");
         return taskVersions;
     }
 }

@@ -33,6 +33,7 @@ public class SavePointDto {
 
     @Transactional
     public void taskVersionSaveToDatabase(List<TaskVersion> taskVersions) {
+        log.info("saveAll taskVersions");
         taskVersionRepository.saveAll(taskVersions);
     }
 }
