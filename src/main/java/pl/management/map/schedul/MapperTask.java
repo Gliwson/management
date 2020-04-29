@@ -8,6 +8,7 @@ import pl.management.domainmodel.*;
 import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @Log4j2
@@ -26,7 +27,27 @@ public class MapperTask {
     public List<TaskVersion> pointDtoToTaskVersion(List<PointDTO> pointDTOList) {
         log.info("start session hibernate in pointDtoToTaskVersion");
         List<TaskVersion> taskVersions = new ArrayList<>();
-        for (PointDTO point : pointDTOList) {
+        Set<PointDTO> pointDTOSet = new HashSet<>();
+
+        List<Task> allWithLastModifiedDate = taskRepository.findAllWithLastModifiedDate();
+
+        log.info(allWithLastModifiedDate.size());
+
+        List<PointDTO> addIfThereIsNo = addIfThereIsNo(pointDTOList, allWithLastModifiedDate);
+        List<PointDTO> filterGetName = filterGetName(pointDTOList, allWithLastModifiedDate);
+        List<PointDTO> filterGetComments = filterGetComments(pointDTOList, allWithLastModifiedDate);
+        List<PointDTO> filterGetColorsComments = filterGetColorsComments(pointDTOList, allWithLastModifiedDate);
+        List<PointDTO> filterGetColorsName = filterGetColorsName(pointDTOList, allWithLastModifiedDate);
+
+        pointDTOSet.addAll(addIfThereIsNo);
+        pointDTOSet.addAll(filterGetName);
+        pointDTOSet.addAll(filterGetComments);
+        pointDTOSet.addAll(filterGetColorsComments);
+        pointDTOSet.addAll(filterGetColorsName);
+
+        log.info(pointDTOSet.size() + " points are updated");
+
+        for (PointDTO point : pointDTOSet) {
             TaskVersion taskVersion = new TaskVersion();
             Set<Task> tasks = new HashSet<>();
             Integer id = Integer.valueOf(point.getId());
@@ -66,5 +87,70 @@ public class MapperTask {
         }
         log.info("end session hibernate in pointDtoToTaskVersion");
         return taskVersions;
+    }
+
+    private List<PointDTO> addIfThereIsNo(List<PointDTO> pointDTOList, List<Task> allWithLastModifiedDate) {
+        return pointDTOList.stream().filter(pointDTO -> {
+            Integer position = Integer.valueOf(pointDTO.getId());
+            long count = allWithLastModifiedDate.stream().filter(task -> task.getPosition() == null || task.getPosition().equals(position)).count();
+            return count == 0;
+        }).collect(Collectors.toList());
+
+    }
+
+    private List<PointDTO> filterGetName(List<PointDTO> pointDTOList, List<Task> allWithLastModifiedDate) {
+        return pointDTOList.stream()
+                .filter(pointDTO -> {
+                    Integer position = Integer.valueOf(pointDTO.getId());
+                    Optional<Task> optionalTask = allWithLastModifiedDate.stream()
+                            .filter(task -> task.getPosition().equals(position))
+                            .findFirst();
+                    return optionalTask
+                            .filter(task -> !pointDTO.getName().equals(task.getName()))
+                            .isPresent();
+                })
+                .collect(Collectors.toList());
+    }
+
+    private List<PointDTO> filterGetComments(List<PointDTO> pointDTOList, List<Task> allWithLastModifiedDate) {
+        return pointDTOList.stream()
+                .filter(pointDTO -> {
+                    Integer position = Integer.valueOf(pointDTO.getId());
+                    Optional<Task> optionalTask = allWithLastModifiedDate.stream()
+                            .filter(task -> task.getPosition().equals(position))
+                            .findFirst();
+                    return optionalTask
+                            .filter(task -> !pointDTO.getComments().equals(task.getComments()))
+                            .isPresent();
+                })
+                .collect(Collectors.toList());
+    }
+
+    private List<PointDTO> filterGetColorsComments(List<PointDTO> pointDTOList, List<Task> allWithLastModifiedDate) {
+        return pointDTOList.stream()
+                .filter(pointDTO -> {
+                    Integer position = Integer.valueOf(pointDTO.getId());
+                    Optional<Task> optionalTask = allWithLastModifiedDate.stream()
+                            .filter(task -> task.getPosition().equals(position))
+                            .findFirst();
+                    return optionalTask
+                            .filter(task -> !pointDTO.getColorsComments().equals(task.getColorsComments()))
+                            .isPresent();
+                })
+                .collect(Collectors.toList());
+    }
+
+    private List<PointDTO> filterGetColorsName(List<PointDTO> pointDTOList, List<Task> allWithLastModifiedDate) {
+        return pointDTOList.stream()
+                .filter(pointDTO -> {
+                    Integer position = Integer.valueOf(pointDTO.getId());
+                    Optional<Task> optionalTask = allWithLastModifiedDate.stream()
+                            .filter(task -> task.getPosition().equals(position))
+                            .findFirst();
+                    return optionalTask
+                            .filter(task -> !pointDTO.getColorsName().equals(task.getColorsName()))
+                            .isPresent();
+                })
+                .collect(Collectors.toList());
     }
 }

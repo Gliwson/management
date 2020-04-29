@@ -12,10 +12,10 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "TASK")
-@Getter
-@Setter
 @Builder
 @AllArgsConstructor
+@Getter
+@Setter
 public class Task implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -53,4 +53,5 @@ public class Task implements Serializable {
 
     public Task() {
     }
+
 }

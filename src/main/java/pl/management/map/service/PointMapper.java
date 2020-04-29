@@ -2,7 +2,7 @@ package pl.management.map.service;
 
 import org.springframework.stereotype.Service;
 import pl.management.domainmodel.PointDTO;
-import pl.management.map.service.dto.PointMapDto;
+import pl.management.domainmodel.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,19 +10,19 @@ import java.util.List;
 @Service
 public class PointMapper {
 
-    public List<PointDTO> pointMapDtosTOPointDto(List<PointMapDto> allWithLastModifiedDate) {
+    public List<PointDTO> taskToPointDtos(List<Task> taks) {
         List<PointDTO> pointDTOS = new ArrayList<>();
-        for (PointMapDto pointMapDto : allWithLastModifiedDate) {
+        for (Task task : taks) {
             PointDTO pointDTO = PointDTO.builder()
-                    .id(pointMapDto.getId().toString())
-                    .name(pointMapDto.getName())
-                    .comments(pointMapDto.getComments())
-                    .colorsComments(pointMapDto.getColorsComments())
-                    .colorsName(pointMapDto.getColorsName())
-                    .dyskHref(pointMapDto.getUrlDysk())
-                    .locationHref(pointMapDto.getUrlLocation())
-                    .x(pointMapDto.getCoordinateX())
-                    .y(pointMapDto.getCoordinateY())
+                    .id(task.getId().toString())
+                    .name(task.getName())
+                    .comments(task.getComments())
+                    .colorsComments(task.getColorsComments())
+                    .colorsName(task.getColorsName())
+                    .dyskHref(task.getUrlDysk())
+                    .locationHref(task.getUrlLocation())
+                    .x(task.getCoordinateX())
+                    .y(task.getCoordinateY())
                     .build();
             pointDTOS.add(pointDTO);
         }

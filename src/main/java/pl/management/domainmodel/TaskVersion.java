@@ -1,8 +1,6 @@
 package pl.management.domainmodel;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,8 +9,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "TASK_VERSION")
-@Getter
-@Setter
 @Data
 public class TaskVersion implements Serializable {
 

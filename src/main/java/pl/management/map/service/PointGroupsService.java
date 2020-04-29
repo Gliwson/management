@@ -5,8 +5,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import pl.management.domainmodel.GroupsOfTask;
 import pl.management.domainmodel.PointDTO;
+import pl.management.domainmodel.Task;
 import pl.management.domainmodel.TaskRepository;
-import pl.management.map.service.dto.PointMapDto;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -42,8 +42,8 @@ public class PointGroupsService {
     @Transactional
     public List<PointDTO> getPointList() {
         log.info("download PointMapDto");
-        List<PointMapDto> allWithLastModifiedDate = taskRepository.findAllWithLastModifiedDate();
-        return pointMapper.pointMapDtosTOPointDto(allWithLastModifiedDate);
+        List<Task> allWithLastModifiedDate = taskRepository.findAllWithLastModifiedDate();
+        return pointMapper.taskToPointDtos(allWithLastModifiedDate);
     }
 
     public List<PointDTO> getInvoiced() {
