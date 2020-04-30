@@ -126,18 +126,18 @@
 
     <profiles>
         <profile>
-            <id>prod</id>
+            <id>dev</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <spring.profiles.active>prod</spring.profiles.active>
+                <spring.profiles.include>dev,logging</spring.profiles.include>
             </properties>
         </profile>
         <profile>
-            <id>dev</id>
+            <id>prod</id>
             <properties>
-                <spring.profiles.active>dev</spring.profiles.active>
+                <spring.profiles.include>prod,logging</spring.profiles.include>
             </properties>
         </profile>
     </profiles>
