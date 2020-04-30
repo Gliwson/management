@@ -48,6 +48,11 @@ public class MapperTask {
         log.info(pointDTOSet.size() + " points are updated");
 
         for (PointDTO point : pointDTOSet) {
+            log.info(point.getName());
+            log.info(point.getColorsName());
+            log.info(point.getComments());
+            log.info(point.getColorsComments());
+
             TaskVersion taskVersion = new TaskVersion();
             Set<Task> tasks = new HashSet<>();
             Integer id = Integer.valueOf(point.getId());
@@ -66,8 +71,8 @@ public class MapperTask {
                     .taskVersion(taskVersion)
                     .build();
             //TODO reduce the number of queries
-            if (taskRepository.existsByPosition(id)) {
-                Optional<Task> firstByPosition = taskRepository.findFirstByPosition(id);
+            Optional<Task> firstByPosition = taskRepository.findFirstByPosition(id);
+            if (firstByPosition.isPresent()) {
                 try {
                     Task firstTask = firstByPosition.orElseThrow(() -> new NotFoundException("Task not found"));
                     optionalTaskVersion = taskVersionRepository.findById(firstTask.getTaskVersion().getId());
