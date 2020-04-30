@@ -31,6 +31,6 @@ public class SchedulerConfig implements SchedulingConfigurer {
 
     @PostConstruct
     private void load() {
-        cron = "0 0/1 * * * *";
+        cron = "0 0/10 * * * *";
     }
 }
